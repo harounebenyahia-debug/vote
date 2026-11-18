@@ -1,0 +1,110 @@
+npm warn Unknown env config "store-dir". This will error in a future major version of npm. See `npm help npmrc` for supported config options.
+npm notice run vote-blockchain@1.0.0 npx
+npm notice run ^"serve^" -l 3000 .
+ INFO  Accepting connections at http://localhost:3000
+ HTTP  11/17/2026 7:19:16 PM ::1 GET /test-mock.html
+ HTTP  11/17/2026 7:19:16 PM ::1 Returned 301 in 8 ms
+ HTTP  11/17/2026 7:19:16 PM ::1 GET /test-mock
+ HTTP  11/17/2026 7:19:16 PM ::1 Returned 200 in 3 ms
+ HTTP  11/17/2026 7:19:21 PM ::1 GET /favicon.ico
+ HTTP  11/17/2026 7:19:21 PM ::1 Returned 404 in 2 ms
+ HTTP  11/17/2026 7:19:21 PM ::1 GET /
+ HTTP  11/17/2026 7:19:21 PM ::1 Returned 304 in 0 ms
+ HTTP  11/17/2026 7:19:30 PM ::1 GET /test-mock.html
+ HTTP  11/17/2026 7:19:30 PM ::1 Returned 301 in 1 ms
+ HTTP  11/17/2026 7:19:30 PM ::1 GET /test-mock
+ HTTP  11/17/2026 7:19:30 PM ::1 Returned 200 in 1 ms
+ HTTP  11/17/2026 7:19:32 PM ::1 GET /test-mock.html
+ HTTP  11/17/2026 7:19:32 PM ::1 Returned 301 in 0 ms
+ HTTP  11/17/2026 7:19:32 PM ::1 GET /test-mock
+ HTTP  11/17/2026 7:19:32 PM ::1 Returned 200 in 1 ms
+ HTTP  11/17/2026 7:19:43 PM ::1 GET /favicon.ico
+ HTTP  11/17/2026 7:19:43 PM ::1 Returned 404 in 2 ms
+ HTTP  11/17/2026 7:19:43 PM ::1 GET /
+ HTTP  11/17/2026 7:19:43 PM ::1 Returned 304 in 0 ms
+ HTTP  11/17/2026 7:21:01 PM ::1 GET /favicon.ico
+ HTTP  11/17/2026 7:21:01 PM ::1 Returned 404 in 2 ms
+ HTTP  11/17/2026 7:21:01 PM ::1 GET /
+ HTTP  11/17/2026 7:21:01 PM ::1 Returned 304 in 1 ms
+ HTTP  11/17/2026 7:23:12 PM ::1 GET /favicon.ico
+ HTTP  11/17/2026 7:23:12 PM ::1 Returned 404 in 1 ms
+ HTTP  11/17/2026 7:23:12 PM ::1 GET /
+ HTTP  11/17/2026 7:23:12 PM ::1 Returned 304 in 1 ms
+ HTTP  11/17/2026 7:23:12 PM ::1 GET /favicon.ico
+ HTTP  11/17/2026 7:23:12 PM ::1 Returned 404 in 0 ms
+ HTTP  11/17/2026 7:23:17 PM ::1 GET /
+ HTTP  11/17/2026 7:23:17 PM ::1 Returned 304 in 1 ms
+ HTTP  11/17/2026 7:23:17 PM ::1 GET /config.js
+ HTTP  11/17/2026 7:23:17 PM ::1 Returned 200 in 1 ms
+ HTTP  11/17/2026 7:24:18 PM ::1 GET /
+ HTTP  11/17/2026 7:24:18 PM ::1 Returned 200 in 0 ms
+ HTTP  11/17/2026 7:24:25 PM ::1 GET /favicon.ico
+ HTTP  11/17/2026 7:24:25 PM ::1 Returned 404 in 1 ms
+ HTTP  11/17/2026 7:24:25 PM ::1 GET /
+ HTTP  11/17/2026 7:24:25 PM ::1 Returned 304 in 1 ms
+ HTTP  11/17/2026 7:25:27 PM ::1 GET /favicon.ico
+ HTTP  11/17/2026 7:25:27 PM ::1 Returned 404 in 1 ms
+ HTTP  11/17/2026 7:25:27 PM ::1 GET /
+ HTTP  11/17/2026 7:25:27 PM ::1 Returned 304 in 0 ms
+ HTTP  11/17/2026 7:25:36 PM ::1 GET /favicon.ico
+ HTTP  11/17/2026 7:25:36 PM ::1 Returned 404 in 1 ms
+ HTTP  11/17/2026 7:25:38 PM ::1 GET /favicon.ico
+ HTTP  11/17/2026 7:25:38 PM ::1 Returned 404 in 1 ms
+ HTTP  11/17/2026 7:25:43 PM ::1 GET /favicon.ico
+ HTTP  11/17/2026 7:25:43 PM ::1 Returned 404 in 1 ms
+ HTTP  11/17/2026 7:25:45 PM ::1 GET /
+ HTTP  11/17/2026 7:25:45 PM ::1 Returned 304 in 1 ms
+ HTTP  11/17/2026 7:25:45 PM ::1 GET /config.js
+ HTTP  11/17/2026 7:25:45 PM ::1 Returned 200 in 1 ms
+ HTTP  11/17/2026 7:26:45 PM ::1 GET /favicon.ico
+ HTTP  11/17/2026 7:26:45 PM ::1 Returned 404 in 1 ms
+ HTTP  11/17/2026 7:26:45 PM ::1 GET /
+ HTTP  11/17/2026 7:26:45 PM ::1 Returned 304 in 0 ms
+ HTTP  11/17/2026 7:28:03 PM ::1 GET /favicon.ico
+ HTTP  11/17/2026 7:28:03 PM ::1 Returned 404 in 1 ms
+ HTTP  11/17/2026 7:28:03 PM ::1 GET /
+ HTTP  11/17/2026 7:28:03 PM ::1 Returned 304 in 1 ms
+ HTTP  11/17/2026 7:29:06 PM ::1 GET /favicon.ico
+ HTTP  11/17/2026 7:29:06 PM ::1 Returned 404 in 1 ms
+ HTTP  11/17/2026 7:29:06 PM ::1 GET /
+ HTTP  11/17/2026 7:29:06 PM ::1 Returned 200 in 1 ms
+ HTTP  11/17/2026 7:34:28 PM ::1 GET /favicon.ico
+ HTTP  11/17/2026 7:34:28 PM ::1 Returned 404 in 1 ms
+ HTTP  11/17/2026 7:34:28 PM ::1 GET /
+ HTTP  11/17/2026 7:34:28 PM ::1 Returned 304 in 0 ms
+ HTTP  11/17/2026 7:38:49 PM ::1 GET /favicon.ico
+ HTTP  11/17/2026 7:38:49 PM ::1 Returned 404 in 1 ms
+ HTTP  11/17/2026 7:38:49 PM ::1 GET /
+ HTTP  11/17/2026 7:38:49 PM ::1 Returned 304 in 0 ms
+ HTTP  11/17/2026 7:40:28 PM ::1 GET /favicon.ico
+ HTTP  11/17/2026 7:40:28 PM ::1 Returned 404 in 2 ms
+ HTTP  11/17/2026 7:40:28 PM ::1 GET /
+ HTTP  11/17/2026 7:40:28 PM ::1 Returned 304 in 0 ms
+ HTTP  11/17/2026 7:40:28 PM ::1 GET /favicon.ico
+ HTTP  11/17/2026 7:40:28 PM ::1 Returned 404 in 1 ms
+ HTTP  11/17/2026 7:40:28 PM ::1 GET /
+ HTTP  11/17/2026 7:40:28 PM ::1 Returned 304 in 1 ms
+ HTTP  11/17/2026 7:42:12 PM ::1 GET /favicon.ico
+ HTTP  11/17/2026 7:42:12 PM ::1 Returned 404 in 1 ms
+ HTTP  11/17/2026 7:42:12 PM ::1 GET /
+ HTTP  11/17/2026 7:42:12 PM ::1 Returned 304 in 1 ms
+ HTTP  11/17/2026 7:47:10 PM ::1 GET /favicon.ico
+ HTTP  11/17/2026 7:47:10 PM ::1 Returned 404 in 1 ms
+ HTTP  11/17/2026 7:47:10 PM ::1 GET /
+ HTTP  11/17/2026 7:47:10 PM ::1 Returned 304 in 1 ms
+ HTTP  11/17/2026 7:49:10 PM ::1 GET /favicon.ico
+ HTTP  11/17/2026 7:49:10 PM ::1 Returned 404 in 1 ms
+ HTTP  11/17/2026 7:49:10 PM ::1 GET /
+ HTTP  11/17/2026 7:49:10 PM ::1 Returned 304 in 1 ms
+ HTTP  11/17/2026 7:52:50 PM ::1 GET /favicon.ico
+ HTTP  11/17/2026 7:52:50 PM ::1 Returned 404 in 1 ms
+ HTTP  11/17/2026 7:52:50 PM ::1 GET /
+ HTTP  11/17/2026 7:52:50 PM ::1 Returned 304 in 1 ms
+ HTTP  11/17/2026 7:55:48 PM ::1 GET /favicon.ico
+ HTTP  11/17/2026 7:55:48 PM ::1 Returned 404 in 2 ms
+ HTTP  11/17/2026 7:55:48 PM ::1 GET /
+ HTTP  11/17/2026 7:55:48 PM ::1 Returned 304 in 1 ms
+ HTTP  11/17/2026 7:57:04 PM ::1 GET /favicon.ico
+ HTTP  11/17/2026 7:57:04 PM ::1 Returned 404 in 1 ms
+ HTTP  11/17/2026 7:57:04 PM ::1 GET /
+ HTTP  11/17/2026 7:57:04 PM ::1 Returned 304 in 1 ms

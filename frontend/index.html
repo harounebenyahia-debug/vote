@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<title>Vote Blockchain</title>
+<style>
+  body{font-family:system-ui,sans-serif;max-width:560px;margin:40px auto;padding:0 16px;color:#222}
+  button{padding:10px 16px;border:0;border-radius:8px;background:#4f46e5;color:#fff;cursor:pointer;font-size:15px}
+  button:disabled{background:#aaa;cursor:not-allowed}
+  .cand{display:flex;justify-content:space-between;align-items:center;padding:10px;border:1px solid #ddd;border-radius:8px;margin:8px 0}
+  #status{margin:12px 0;padding:10px;border-radius:8px;background:#f3f4f6}
+  .ok{background:#dcfce7!important}.err{background:#fee2e2!important}
+  .bar{height:8px;background:#4f46e5;border-radius:4px;margin-top:4px}
+</style>
+</head>
+<body>
+<h1 id="titre">Vote</h1>
+<button id="connect">Connecter MetaMask</button>
+<span id="local" style="display:none">
+  ou compte de test local :
+  <select id="acct">
+    <option value="0">#0 (organisateur, autorise)</option>
+    <option value="1">#1 (autorise)</option>
+    <option value="2">#2 (autorise)</option>
+    <option value="3">#3 (autorise)</option>
+    <option value="4">#4 (autorise)</option>
+    <option value="5">#5 (NON autorise)</option>
+  </select>
+</span>
+<p id="compte"></p>
+<div id="status">Non connecte.</div>
+<h3>Candidats</h3>
+<div id="candidats"></div>
+<h3>Resultats en direct</h3>
+<div id="resultats"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/ethers@6.13.4/dist/ethers.umd.min.js"></script>
+<script src="config.js"></script>
+<script>
+let provider, signer, contract, compte;
+const $ = (id) => document.getElementById(id);
+if (!window.ethereum) {
+  $("local").style.display = "inline";
+  $("connect").textContent = "Se connecter (compte de test)";
+}
+function status(msg, cls = "") { const s = $("status"); s.textContent = msg; s.className = cls; }
+
+$("connect").onclick = async () => {
+  try {
+    if (window.ethereum) {
+      provider = new ethers.BrowserProvider(window.ethereum);
+      await provider.send("eth_requestAccounts", []);
+      signer = await provider.getSigner();
+    } else {
+      // Mode test local : pas de MetaMask, on utilise les comptes de test Hardhat
+      provider = new ethers.JsonRpcProvider("http://127.0.0.1:8545");
+      signer = await provider.getSigner(Number($("acct").value));
+    }
+    compte = await signer.getAddress();
+    contract = new ethers.Contract(VOTE_CONFIG.address, VOTE_CONFIG.abi, signer);
+    $("compte").textContent = "Compte : " + compte;
+    $("titre").textContent = await contract.titre();
+    // Evenement en temps reel
+    contract.on("VoteEmis", () => afficher());
+    await afficher();
+  } catch (e) { status("Connexion refusee : " + (e.shortMessage || e.message), "err"); }
+};
+
+async function afficher() {
+  const autorise = await contract.estAutorise(compte);
+  const dejaVote = await contract.hasVoted(compte);
+  if (!autorise) status("Ce portefeuille n'est pas autorise a voter.", "err");
+  else if (dejaVote) status("Vous avez deja vote. Merci !", "ok");
+  else status("Vous etes eligible. Choisissez un candidat.", "ok");
+
+  const [noms, totaux] = await contract.getResultats();
+  const total = totaux.reduce((s, t) => s + Number(t), 0) || 1;
+  $("candidats").innerHTML = "";
+  $("resultats").innerHTML = "";
+  noms.forEach((nom, i) => {
+    const d = document.createElement("div");
+    d.className = "cand";
+    d.innerHTML = `<span>${nom}</span>`;
+    const b = document.createElement("button");
+    b.textContent = "Voter";
+    b.disabled = !autorise || dejaVote;
+    b.onclick = () => voter(i);
+    d.appendChild(b);
+    $("candidats").appendChild(d);
+
+    const pct = (Number(totaux[i]) / total) * 100;
+    $("resultats").innerHTML += `<div>${nom} : <b>${totaux[i]}</b> voix<div class="bar" style="width:${pct}%"></div></div>`;
+  });
+}
+
+async function voter(id) {
+  try {
+    status("Confirmez la transaction dans MetaMask...");
+    const tx = await contract.voter(id);
+    status("Transaction envoyee, attente de confirmation...");
+    await tx.wait();
+    status("Vote enregistre sur la blockchain !", "ok");
+    await afficher();
+  } catch (e) {
+    status("Erreur : " + (e.reason || e.shortMessage || e.message), "err");
+  }
+}
+</script>
+</body>
+</html>
